@@ -1,146 +1,141 @@
 """
 Experiment: Email Daily Summary Agent
-Reads Gmail emails and generates a daily KPI report using Claude.
+Connects to Gmail via IMAP (no Google Cloud needed) and uses Claude
+to categorize emails and generate a daily KPI report.
 """
+import imaplib
+import email
 import os
 from datetime import datetime
+from email.header import decode_header
 from dotenv import load_dotenv
-from google.oauth2.credentials import Credentials
-from google_auth_oauthlib.flow import InstalledAppFlow
-from google.auth.transport.requests import Request
-from googleapiclient.discovery import build
 import anthropic
 
 load_dotenv()
 
-SCOPES = ["https://www.googleapis.com/auth/gmail.readonly"]
-CREDENTIALS_FILE = "credentials/credentials.json"
-TOKEN_FILE = "credentials/token.json"
+IMAP_HOST = "imap.gmail.com"
+IMAP_PORT = 993
 
 claude = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
 
 
-# ── Gmail auth ────────────────────────────────────────────────────────────────
+# ── IMAP helpers ──────────────────────────────────────────────────────────────
 
-def get_gmail_service():
-    creds = None
-    if os.path.exists(TOKEN_FILE):
-        creds = Credentials.from_authorized_user_file(TOKEN_FILE, SCOPES)
-    if not creds or not creds.valid:
-        if creds and creds.expired and creds.refresh_token:
-            creds.refresh(Request())
+def connect(gmail_address: str, app_password: str) -> imaplib.IMAP4_SSL:
+    mail = imaplib.IMAP4_SSL(IMAP_HOST, IMAP_PORT)
+    mail.login(gmail_address, app_password)
+    return mail
+
+
+def decode_str(value: str) -> str:
+    parts = decode_header(value)
+    result = []
+    for part, enc in parts:
+        if isinstance(part, bytes):
+            result.append(part.decode(enc or "utf-8", errors="replace"))
         else:
-            flow = InstalledAppFlow.from_client_secrets_file(CREDENTIALS_FILE, SCOPES)
-            creds = flow.run_local_server(port=0)
-        with open(TOKEN_FILE, "w") as f:
-            f.write(creds.to_json())
-    return build("gmail", "v1", credentials=creds)
+            result.append(part)
+    return "".join(result)
 
 
-# ── Data fetching ─────────────────────────────────────────────────────────────
+def count_today(mail: imaplib.IMAP4_SSL, folder: str) -> int:
+    """Count emails received today in a given folder."""
+    try:
+        status, _ = mail.select(folder, readonly=True)
+        if status != "OK":
+            return 0
+        today = datetime.now().strftime("%d-%b-%Y")
+        _, data = mail.search(None, f'(SINCE "{today}")')
+        ids = data[0].split()
+        return len(ids)
+    except Exception:
+        return 0
 
-def today_query():
-    return f"after:{datetime.now().strftime('%Y/%m/%d')}"
 
+def fetch_inbox_sample(mail: imaplib.IMAP4_SSL, max_results: int = 20) -> list[dict]:
+    """Fetch From + Subject for today's inbox emails."""
+    mail.select("INBOX", readonly=True)
+    today = datetime.now().strftime("%d-%b-%Y")
+    _, data = mail.search(None, f'(SINCE "{today}")')
+    ids = data[0].split()[-max_results:]  # most recent N
 
-def count_label(service, label: str) -> int:
-    result = service.users().messages().list(
-        userId="me", q=today_query(), labelIds=[label], maxResults=1
-    ).execute()
-    return result.get("resultSizeEstimate", 0)
-
-
-def fetch_inbox_sample(service, max_results: int = 15) -> list[dict]:
-    """Fetch metadata (From, Subject) for a sample of today's inbox emails."""
-    result = service.users().messages().list(
-        userId="me", q=today_query(), labelIds=["INBOX"], maxResults=max_results
-    ).execute()
-    messages = result.get("messages", [])
     sample = []
-    for msg in messages:
-        detail = service.users().messages().get(
-            userId="me", id=msg["id"], format="metadata",
-            metadataHeaders=["From", "Subject"]
-        ).execute()
-        headers = {h["name"]: h["value"] for h in detail.get("payload", {}).get("headers", [])}
+    for uid in ids:
+        _, msg_data = mail.fetch(uid, "(BODY.PEEK[HEADER.FIELDS (FROM SUBJECT)])")
+        raw = msg_data[0][1]
+        msg = email.message_from_bytes(raw)
         sample.append({
-            "from": headers.get("From", "Unknown"),
-            "subject": headers.get("Subject", "(no subject)"),
+            "from": decode_str(msg.get("From", "Unknown")),
+            "subject": decode_str(msg.get("Subject", "(no subject)")),
         })
     return sample
 
 
-def fetch_stats(service) -> dict:
-    print("  Counting inbox...")
-    inbox = count_label(service, "INBOX")
-    print("  Counting unread...")
-    unread = count_label(service, "UNREAD")
-    print("  Counting promotions/ads...")
-    promotions = count_label(service, "CATEGORY_PROMOTIONS")
-    print("  Counting social...")
-    social = count_label(service, "CATEGORY_SOCIAL")
-    print("  Counting updates/notifications...")
-    updates = count_label(service, "CATEGORY_UPDATES")
-    print("  Counting forums...")
-    forums = count_label(service, "CATEGORY_FORUMS")
-    print("  Counting spam...")
-    spam = count_label(service, "SPAM")
-    print("  Counting trash...")
-    trash = count_label(service, "TRASH")
-    print("  Fetching inbox sample...")
-    sample = fetch_inbox_sample(service)
+def count_unread_today(mail: imaplib.IMAP4_SSL) -> int:
+    mail.select("INBOX", readonly=True)
+    today = datetime.now().strftime("%d-%b-%Y")
+    _, data = mail.search(None, f'(UNSEEN SINCE "{today}")')
+    return len(data[0].split())
 
-    total = inbox + spam + promotions
+
+def fetch_stats(mail: imaplib.IMAP4_SSL) -> dict:
+    print("  Counting inbox...")
+    inbox = count_today(mail, "INBOX")
+    print("  Counting unread...")
+    unread = count_unread_today(mail)
+    print("  Counting spam...")
+    spam = count_today(mail, "[Gmail]/Spam")
+    print("  Counting trash...")
+    trash = count_today(mail, "[Gmail]/Trash")
+    print("  Fetching inbox sample for Claude to categorize...")
+    sample = fetch_inbox_sample(mail)
+
     return {
         "date": datetime.now().strftime("%B %d, %Y"),
-        "total": total,
         "inbox": inbox,
         "unread": unread,
-        "promotions": promotions,
-        "social": social,
-        "updates": updates,
-        "forums": forums,
         "spam": spam,
         "trash": trash,
+        "total": inbox + spam,
         "sample": sample,
     }
 
 
-# ── Claude summary ────────────────────────────────────────────────────────────
+# ── Claude analysis ───────────────────────────────────────────────────────────
 
 def generate_summary(stats: dict) -> str:
     sample_lines = "\n".join(
-        f"  - [{e['from']}] {e['subject']}" for e in stats["sample"]
+        f"  - FROM: {e['from']} | SUBJECT: {e['subject']}"
+        for e in stats["sample"]
     ) or "  (no inbox emails today)"
 
     prompt = f"""Here are my Gmail statistics for today ({stats['date']}):
 
-KPIs:
-- Total emails: {stats['total']}
-- Inbox: {stats['inbox']}
+Raw KPIs:
+- Total emails received: {stats['total']}
+- In inbox: {stats['inbox']}
 - Unread: {stats['unread']}
-- Promotions / Ads: {stats['promotions']}
-- Social: {stats['social']}
-- Updates / Notifications: {stats['updates']}
-- Forums: {stats['forums']}
 - Spam (auto-filtered): {stats['spam']}
 - Deleted / Trash: {stats['trash']}
 
-Sample of today's inbox:
+Sample of today's inbox emails (From + Subject):
 {sample_lines}
 
-Generate a concise end-of-day email report with:
-1. A short overview paragraph (2-3 sentences)
-2. The KPIs laid out clearly
-3. Any notable patterns from the sample (types of senders, recurring topics, etc.)
-4. A single actionable recommendation (e.g. how many emails likely need a reply)
+Tasks:
+1. Categorize the sample emails into: Ads/Promotions, Newsletters, Social, Work/Personal, Notifications, Other
+2. Estimate counts per category based on the sample (extrapolate to full inbox if needed)
+3. Write a concise end-of-day report with:
+   - Overview paragraph (2-3 sentences)
+   - KPI table (total, inbox, unread, spam, trash + your category breakdown)
+   - Key patterns or observations
+   - One actionable recommendation
 
-Keep it sharp and practical — this is a personal productivity report."""
+Keep it sharp and practical."""
 
     response = claude.messages.create(
         model="claude-sonnet-4-6",
-        max_tokens=1024,
-        system="You are a personal email productivity assistant. Write clear, concise daily reports.",
+        max_tokens=1500,
+        system="You are a personal email productivity assistant. Analyze email metadata and write clear, concise daily reports.",
         messages=[{"role": "user", "content": prompt}],
     )
     return response.content[0].text
@@ -149,14 +144,18 @@ Keep it sharp and practical — this is a personal productivity report."""
 # ── Main ──────────────────────────────────────────────────────────────────────
 
 def main():
+    gmail_address = os.environ["GMAIL_ADDRESS"]
+    app_password = os.environ["GMAIL_APP_PASSWORD"]
+
     print("📧  Email Daily Summary Agent")
     print(f"    {datetime.now().strftime('%B %d, %Y — %H:%M')}\n")
 
-    print("→ Connecting to Gmail...")
-    service = get_gmail_service()
+    print("→ Connecting to Gmail via IMAP...")
+    mail = connect(gmail_address, app_password)
 
     print("→ Fetching stats...")
-    stats = fetch_stats(service)
+    stats = fetch_stats(mail)
+    mail.logout()
 
     print("→ Generating summary with Claude...\n")
     print("=" * 60)
