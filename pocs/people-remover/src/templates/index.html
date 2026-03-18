@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>People Remover</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>People Remover</h1>
+      <p class="subtitle">Upload a photo, paint over people, and erase them.</p>
+    </header>
+
+    <main>
+      <!-- Upload zone -->
+      <div id="upload-zone" class="upload-zone">
+        <input type="file" id="file-input" accept="image/*" hidden />
+        <div class="upload-prompt" id="upload-prompt">
+          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+          <p>Click or drag an image here</p>
+          <span>PNG, JPG up to 10MB</span>
+        </div>
+      </div>
+
+      <!-- Canvas editor -->
+      <div id="editor" class="editor hidden">
+        <div class="toolbar">
+          <label class="tool-label">Brush size
+            <input type="range" id="brush-size" min="10" max="120" value="40" />
+            <span id="brush-size-display">40px</span>
+          </label>
+          <button id="btn-clear-mask" class="btn btn-secondary">Clear mask</button>
+          <button id="btn-remove" class="btn btn-primary">Remove people</button>
+          <button id="btn-reset" class="btn btn-ghost">Upload new</button>
+        </div>
+
+        <div class="canvas-area">
+          <div class="canvas-wrap" id="canvas-wrap">
+            <canvas id="image-canvas"></canvas>
+            <canvas id="mask-canvas"></canvas>
+            <div id="brush-cursor" class="brush-cursor"></div>
+          </div>
+          <p class="hint">Paint in red over every person you want removed, then click <strong>Remove people</strong>.</p>
+        </div>
+
+        <!-- Result -->
+        <div id="result-section" class="result-section hidden">
+          <h2>Result</h2>
+          <div class="result-grid">
+            <div>
+              <p class="label">Original</p>
+              <img id="original-img" alt="Original" />
+            </div>
+            <div>
+              <p class="label">People removed</p>
+              <img id="result-img" alt="Result" />
+            </div>
+          </div>
+          <a id="download-link" class="btn btn-primary" download="people-removed.png">Download result</a>
+        </div>
+      </div>
+
+      <!-- Loading overlay -->
+      <div id="loading" class="loading hidden">
+        <div class="spinner"></div>
+        <p>Removing people… this may take 20–60 seconds</p>
+      </div>
+
+      <!-- Error banner -->
+      <div id="error-banner" class="error-banner hidden"></div>
+    </main>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
