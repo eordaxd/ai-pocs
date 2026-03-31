@@ -19,3 +19,9 @@ _Logged at 2026-03-31 11:41:58 UTC_
 > Delete dead code — version control remembers it for you.
 
 _Logged at 2026-03-31 11:41:59 UTC_
+
+## 2026-03-31 (#4)
+
+> Use feature flags to decouple deployment from release.
+
+_Logged at 2026-03-31 11:42:00 UTC_
