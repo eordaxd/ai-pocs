@@ -13,3 +13,9 @@ _Logged at 2026-03-31 11:29 UTC_
 > Learn one new keyboard shortcut every week.
 
 _Logged at 2026-03-31 11:41:58 UTC_
+
+## 2026-03-31 (#3)
+
+> Delete dead code — version control remembers it for you.
+
+_Logged at 2026-03-31 11:41:59 UTC_
