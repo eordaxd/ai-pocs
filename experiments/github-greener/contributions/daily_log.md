@@ -25,3 +25,9 @@ _Logged at 2026-03-31 11:41:59 UTC_
 > Use feature flags to decouple deployment from release.
 
 _Logged at 2026-03-31 11:42:00 UTC_
+
+## 2026-03-31 (#5)
+
+> Write tests before fixing bugs to prevent regressions.
+
+_Logged at 2026-03-31 11:42:36 UTC_
