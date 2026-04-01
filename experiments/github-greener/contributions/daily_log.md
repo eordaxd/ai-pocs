@@ -37,3 +37,9 @@ _Logged at 2026-03-31 11:42:36 UTC_
 > Continuous integration catches problems while context is fresh.
 
 _Logged at 2026-03-31 11:42:37 UTC_
+
+## 2026-04-01
+
+> Measure before you optimize.
+
+_Logged at 2026-04-01 03:31:50 UTC_
