@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Github Greener</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0d1117;
+            color: #e6edf3;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            width: 480px;
+            padding: 40px;
+        }
+        h1 {
+            font-size: 28px;
+            margin-bottom: 8px;
+            color: #58a6ff;
+        }
+        .subtitle {
+            color: #8b949e;
+            margin-bottom: 32px;
+            font-size: 14px;
+        }
+        .status-bar {
+            display: flex;
+            justify-content: space-between;
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            padding: 16px 20px;
+            margin-bottom: 28px;
+            font-size: 14px;
+        }
+        .status-item { text-align: center; }
+        .status-label { color: #8b949e; font-size: 12px; margin-bottom: 4px; }
+        .status-value { font-weight: 600; font-size: 18px; }
+        .status-value.green { color: #3fb950; }
+        .status-value.yellow { color: #d29922; }
+        .status-value.red { color: #f85149; }
+
+        .section {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 20px;
+        }
+        .section-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .badge {
+            font-size: 11px;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-weight: 500;
+        }
+        .badge.active { background: #238636; color: #fff; }
+        .badge.inactive { background: #da3633; color: #fff; }
+
+        .slider-row {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+        .slider-row input[type="range"] {
+            flex: 1;
+            accent-color: #58a6ff;
+            height: 6px;
+        }
+        .slider-value {
+            font-size: 32px;
+            font-weight: 700;
+            color: #58a6ff;
+            min-width: 48px;
+            text-align: center;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        .btn-green {
+            background: #238636;
+            color: #fff;
+        }
+        .btn-green:hover:not(:disabled) { background: #2ea043; }
+        .btn-outline {
+            background: transparent;
+            color: #58a6ff;
+            border: 1px solid #30363d;
+        }
+        .btn-outline:hover:not(:disabled) { border-color: #58a6ff; }
+        .btn-red {
+            background: transparent;
+            color: #f85149;
+            border: 1px solid #30363d;
+        }
+        .btn-red:hover:not(:disabled) { border-color: #f85149; }
+
+        .log {
+            margin-top: 16px;
+            max-height: 200px;
+            overflow-y: auto;
+            font-size: 13px;
+            font-family: 'SF Mono', 'Fira Code', monospace;
+            line-height: 1.6;
+        }
+        .log-entry { padding: 2px 0; }
+        .log-entry.ok { color: #3fb950; }
+        .log-entry.ok::before { content: "  "; }
+        .log-entry.error { color: #f85149; }
+        .log-entry.error::before { content: "  "; }
+        .log-entry.info { color: #8b949e; }
+        .log-entry.info::before { content: "  "; }
+
+        .spinner {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border: 2px solid #30363d;
+            border-top-color: #58a6ff;
+            border-radius: 50%;
+            animation: spin 0.6s linear infinite;
+            vertical-align: middle;
+            margin-right: 8px;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .contribution-graph {
+            display: flex;
+            gap: 3px;
+            justify-content: center;
+            margin-bottom: 32px;
+        }
+        .graph-col { display: flex; flex-direction: column; gap: 3px; }
+        .graph-cell {
+            width: 12px;
+            height: 12px;
+            border-radius: 2px;
+            background: #161b22;
+            border: 1px solid #1b2028;
+        }
+        .graph-cell.l1 { background: #0e4429; border-color: #0e4429; }
+        .graph-cell.l2 { background: #006d32; border-color: #006d32; }
+        .graph-cell.l3 { background: #26a641; border-color: #26a641; }
+        .graph-cell.l4 { background: #39d353; border-color: #39d353; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Github Greener</h1>
+        <p class="subtitle">Keep your contribution graph green, every day.</p>
+
+        <div class="contribution-graph" id="graph"></div>
+
+        <div class="status-bar">
+            <div class="status-item">
+                <div class="status-label">Date</div>
+                <div class="status-value">{{ today }}</div>
+            </div>
+            <div class="status-item">
+                <div class="status-label">Commits Today</div>
+                <div class="status-value green" id="commits-today">{{ commits_today }}</div>
+            </div>
+            <div class="status-item">
+                <div class="status-label">Scheduler</div>
+                <div class="status-value" id="scheduler-status">
+                    {% if scheduler_active %}
+                        <span class="green">ON</span>
+                    {% else %}
+                        <span class="red">OFF</span>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+        <!-- Manual Push Section -->
+        <div class="section">
+            <div class="section-title">Manual Push</div>
+            <div class="slider-row">
+                <span style="color:#8b949e; font-size:13px;">Commits</span>
+                <input type="range" id="commit-count" min="1" max="10" value="1">
+                <div class="slider-value" id="count-display">1</div>
+            </div>
+            <button class="btn btn-green" id="push-btn" onclick="doPush()">
+                Push 1 commit now
+            </button>
+            <div class="log" id="push-log"></div>
+        </div>
+
+        <!-- Scheduler Section -->
+        <div class="section">
+            <div class="section-title">
+                Automated Scheduler
+                <span class="badge {{ 'active' if scheduler_active else 'inactive' }}" id="scheduler-badge">
+                    {{ 'ACTIVE' if scheduler_active else 'INACTIVE' }}
+                </span>
+            </div>
+            <p style="color:#8b949e; font-size:13px; margin-bottom:16px;">
+                Runs automatically on wake/login and retries every 4 hours.
+            </p>
+            {% if scheduler_active %}
+                <button class="btn btn-red" id="scheduler-btn" onclick="toggleScheduler('uninstall')">
+                    Disable Scheduler
+                </button>
+            {% else %}
+                <button class="btn btn-outline" id="scheduler-btn" onclick="toggleScheduler('install')">
+                    Enable Scheduler
+                </button>
+            {% endif %}
+        </div>
+    </div>
+
+    <script>
+        // Mini contribution graph
+        function buildGraph() {
+            const graph = document.getElementById('graph');
+            const weeks = 20;
+            for (let w = 0; w < weeks; w++) {
+                const col = document.createElement('div');
+                col.className = 'graph-col';
+                for (let d = 0; d < 7; d++) {
+                    const cell = document.createElement('div');
+                    cell.className = 'graph-cell';
+                    // Fill recent days with green
+                    const daysAgo = (weeks - 1 - w) * 7 + (6 - d);
+                    if (daysAgo <= 0) {
+                        const c = parseInt(document.getElementById('commits-today').textContent) || 0;
+                        cell.className += c > 3 ? ' l4' : c > 1 ? ' l3' : c > 0 ? ' l2' : '';
+                    } else if (daysAgo <= 60) {
+                        const r = Math.random();
+                        cell.className += r > 0.7 ? ' l1' : r > 0.5 ? ' l2' : r > 0.35 ? ' l3' : r > 0.25 ? ' l4' : '';
+                    }
+                }
+                graph.appendChild(col);
+            }
+        }
+        buildGraph();
+
+        // Slider
+        const slider = document.getElementById('commit-count');
+        const display = document.getElementById('count-display');
+        const pushBtn = document.getElementById('push-btn');
+
+        slider.addEventListener('input', () => {
+            const n = slider.value;
+            display.textContent = n;
+            pushBtn.textContent = `Push ${n} commit${n > 1 ? 's' : ''} now`;
+        });
+
+        // Push
+        async function doPush() {
+            const count = parseInt(slider.value);
+            const logEl = document.getElementById('push-log');
+            pushBtn.disabled = true;
+            pushBtn.innerHTML = '<span class="spinner"></span>Pushing...';
+            logEl.innerHTML = '<div class="log-entry info">Starting ' + count + ' commit(s)...</div>';
+
+            try {
+                const res = await fetch('/api/push', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({count}),
+                });
+                const data = await res.json();
+
+                logEl.innerHTML = '';
+                data.results.forEach((r, i) => {
+                    const div = document.createElement('div');
+                    if (r.status === 'ok') {
+                        div.className = 'log-entry ok';
+                        div.textContent = `#${i+1} ${r.message}`;
+                    } else {
+                        div.className = 'log-entry error';
+                        div.textContent = `#${i+1} Failed: ${r.error}`;
+                    }
+                    logEl.appendChild(div);
+                });
+
+                document.getElementById('commits-today').textContent = data.commits_today;
+            } catch (e) {
+                logEl.innerHTML = '<div class="log-entry error">Network error: ' + e.message + '</div>';
+            }
+
+            pushBtn.disabled = false;
+            pushBtn.textContent = `Push ${count} commit${count > 1 ? 's' : ''} now`;
+        }
+
+        // Scheduler toggle
+        async function toggleScheduler(action) {
+            const btn = document.getElementById('scheduler-btn');
+            btn.disabled = true;
+            btn.innerHTML = '<span class="spinner"></span>' + (action === 'install' ? 'Enabling...' : 'Disabling...');
+
+            try {
+                const res = await fetch('/api/scheduler', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({action}),
+                });
+                const data = await res.json();
+                const active = data.scheduler_active;
+
+                const badge = document.getElementById('scheduler-badge');
+                const statusVal = document.getElementById('scheduler-status');
+
+                badge.textContent = active ? 'ACTIVE' : 'INACTIVE';
+                badge.className = 'badge ' + (active ? 'active' : 'inactive');
+                statusVal.innerHTML = active ? '<span class="green">ON</span>' : '<span class="red">OFF</span>';
+
+                btn.className = active ? 'btn btn-red' : 'btn btn-outline';
+                btn.textContent = active ? 'Disable Scheduler' : 'Enable Scheduler';
+                btn.onclick = () => toggleScheduler(active ? 'uninstall' : 'install');
+            } catch (e) {
+                alert('Error: ' + e.message);
+            }
+
+            btn.disabled = false;
+        }
+    </script>
+</body>
+</html>

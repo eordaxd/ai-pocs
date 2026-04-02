@@ -102,15 +102,24 @@ def already_committed_today() -> bool:
     return marker in DAILY_LOG.read_text()
 
 
-def append_daily_entry() -> str:
-    """Append today's entry to the daily log. Returns the tip used."""
+def count_today_commits() -> int:
+    """Count how many entries exist for today."""
+    if not DAILY_LOG.exists():
+        return 0
+    content = DAILY_LOG.read_text()
+    today = today_str()
+    return content.count(f"## {today}")
+
+
+def append_entry(seq: int = 0) -> str:
+    """Append an entry to the daily log. Returns the tip used."""
     CONTRIB_DIR.mkdir(parents=True, exist_ok=True)
 
     tip = random.choice(TIPS)
-    now = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
-    entry = f"\n## {today_str()}\n\n> {tip}\n\n_Logged at {now}_\n"
+    now = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC")
+    label = f"## {today_str()}" if seq == 0 else f"## {today_str()} (#{seq + 1})"
+    entry = f"\n{label}\n\n> {tip}\n\n_Logged at {now}_\n"
 
-    # Create file with header if it doesn't exist
     if not DAILY_LOG.exists():
         DAILY_LOG.write_text(
             "# Daily Dev Tips\n\n"
@@ -123,7 +132,7 @@ def append_daily_entry() -> str:
     return tip
 
 
-def commit_and_push(dry: bool = False) -> None:
+def commit_and_push(msg: str, dry: bool = False) -> None:
     """Stage, commit, and push the daily log update."""
     rel_path = DAILY_LOG.relative_to(REPO_ROOT)
 
@@ -132,10 +141,27 @@ def commit_and_push(dry: bool = False) -> None:
         return
 
     git("add", str(rel_path))
-    msg = f"daily: dev tip for {today_str()}"
     git("commit", "-m", msg)
     git("push", "origin", BRANCH)
     log.info("Pushed: %s", msg)
+
+
+def run_multiple(count: int) -> list[dict]:
+    """Run N commits+pushes. Returns a list of results."""
+    results = []
+    existing = count_today_commits()
+    for i in range(count):
+        seq = existing + i
+        try:
+            tip = append_entry(seq)
+            msg = f"daily: dev tip for {today_str()}" if seq == 0 else f"daily: dev tip #{seq + 1} for {today_str()}"
+            commit_and_push(msg)
+            results.append({"status": "ok", "tip": tip, "message": msg})
+            log.info("Commit %d/%d done: %s", i + 1, count, msg)
+        except Exception as e:
+            results.append({"status": "error", "error": str(e)})
+            log.error("Commit %d/%d failed: %s", i + 1, count, e)
+    return results
 
 
 # ---------------------------------------------------------------------------
@@ -150,10 +176,10 @@ def main() -> None:
         log.info("Already committed today (%s). Skipping.", today_str())
         return
 
-    tip = append_daily_entry()
+    tip = append_entry(seq=0)
     log.info("Today's tip: %s", tip)
 
-    commit_and_push(dry=dry)
+    commit_and_push(f"daily: dev tip for {today_str()}", dry=dry)
     log.info("Done!")
 
 
