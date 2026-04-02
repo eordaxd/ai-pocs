@@ -55,3 +55,9 @@ _Logged at 2026-04-02 18:35:40 UTC_
 > Progress over perfection — ship and iterate.
 
 _Logged at 2026-04-02 18:53:15 UTC_
+
+## 2026-04-02 (#3)
+
+> Measure before you optimize.
+
+_Logged at 2026-04-02 18:53:16 UTC_
