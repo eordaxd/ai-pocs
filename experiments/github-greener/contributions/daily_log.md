@@ -91,3 +91,9 @@ _Logged at 2026-04-06 03:00:25 UTC_
 > Use meaningful variable names — future you will thank you.
 
 _Logged at 2026-04-07 02:22:06 UTC_
+
+## 2026-04-08
+
+> Design for observability: metrics, logs, and traces.
+
+_Logged at 2026-04-08 00:35:10 UTC_
