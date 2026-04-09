@@ -97,3 +97,9 @@ _Logged at 2026-04-07 02:22:06 UTC_
 > Design for observability: metrics, logs, and traces.
 
 _Logged at 2026-04-08 00:35:10 UTC_
+
+## 2026-04-09
+
+> Document the 'why', not the 'what' — the code shows the what.
+
+_Logged at 2026-04-09 00:58:41 UTC_
