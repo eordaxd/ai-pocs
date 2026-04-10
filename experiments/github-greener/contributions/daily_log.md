@@ -103,3 +103,9 @@ _Logged at 2026-04-08 00:35:10 UTC_
 > Document the 'why', not the 'what' — the code shows the what.
 
 _Logged at 2026-04-09 00:58:41 UTC_
+
+## 2026-04-10
+
+> Prefer composition over inheritance.
+
+_Logged at 2026-04-10 10:05:11 UTC_
