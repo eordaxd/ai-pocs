@@ -115,3 +115,9 @@ _Logged at 2026-04-10 10:05:11 UTC_
 > A failing test is more valuable than no test at all.
 
 _Logged at 2026-04-11 01:51:48 UTC_
+
+## 2026-04-12
+
+> Write tests before fixing bugs to prevent regressions.
+
+_Logged at 2026-04-12 02:59:26 UTC_
