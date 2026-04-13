@@ -121,3 +121,9 @@ _Logged at 2026-04-11 01:51:48 UTC_
 > Write tests before fixing bugs to prevent regressions.
 
 _Logged at 2026-04-12 02:59:26 UTC_
+
+## 2026-04-13
+
+> Prefer composition over inheritance.
+
+_Logged at 2026-04-13 02:05:44 UTC_
