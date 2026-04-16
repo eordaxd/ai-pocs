@@ -133,3 +133,9 @@ _Logged at 2026-04-13 02:05:44 UTC_
 > Build for accessibility from the start, not as a retrofit.
 
 _Logged at 2026-04-14 06:40:26 UTC_
+
+## 2026-04-16
+
+> Document the 'why', not the 'what' — the code shows the what.
+
+_Logged at 2026-04-16 19:48:58 UTC_
