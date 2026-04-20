@@ -139,3 +139,9 @@ _Logged at 2026-04-14 06:40:26 UTC_
 > Document the 'why', not the 'what' — the code shows the what.
 
 _Logged at 2026-04-16 19:48:58 UTC_
+
+## 2026-04-20
+
+> Continuous integration catches problems while context is fresh.
+
+_Logged at 2026-04-20 03:51:59 UTC_
