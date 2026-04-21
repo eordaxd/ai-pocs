@@ -145,3 +145,9 @@ _Logged at 2026-04-16 19:48:58 UTC_
 > Continuous integration catches problems while context is fresh.
 
 _Logged at 2026-04-20 03:51:59 UTC_
+
+## 2026-04-21
+
+> Refactor early and often; tech debt compounds.
+
+_Logged at 2026-04-21 00:24:22 UTC_
