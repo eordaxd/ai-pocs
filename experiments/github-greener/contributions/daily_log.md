@@ -157,3 +157,9 @@ _Logged at 2026-04-21 00:24:22 UTC_
 > Keep dependencies up to date to avoid security surprises.
 
 _Logged at 2026-04-22 10:23:55 UTC_
+
+## 2026-04-23
+
+> Master your debugger — print statements only get you so far.
+
+_Logged at 2026-04-23 15:14:27 UTC_
