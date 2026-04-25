@@ -163,3 +163,9 @@ _Logged at 2026-04-22 10:23:55 UTC_
 > Master your debugger — print statements only get you so far.
 
 _Logged at 2026-04-23 15:14:27 UTC_
+
+## 2026-04-25
+
+> Immutable data structures prevent entire classes of bugs.
+
+_Logged at 2026-04-25 15:53:32 UTC_
