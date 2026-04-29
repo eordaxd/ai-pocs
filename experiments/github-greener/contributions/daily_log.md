@@ -175,3 +175,9 @@ _Logged at 2026-04-25 15:53:32 UTC_
 > Embrace the UNIX philosophy: do one thing well.
 
 _Logged at 2026-04-28 05:45:03 UTC_
+
+## 2026-04-29
+
+> Treat logs as a first-class feature, not an afterthought.
+
+_Logged at 2026-04-29 03:27:52 UTC_
