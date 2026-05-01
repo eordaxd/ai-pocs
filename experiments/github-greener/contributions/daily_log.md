@@ -187,3 +187,9 @@ _Logged at 2026-04-29 03:27:52 UTC_
 > Read other people's code to expand your toolkit.
 
 _Logged at 2026-04-30 10:04:03 UTC_
+
+## 2026-05-01
+
+> Write tests before fixing bugs to prevent regressions.
+
+_Logged at 2026-05-01 09:09:13 UTC_
