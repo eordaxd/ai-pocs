@@ -193,3 +193,9 @@ _Logged at 2026-04-30 10:04:03 UTC_
 > Write tests before fixing bugs to prevent regressions.
 
 _Logged at 2026-05-01 09:09:13 UTC_
+
+## 2026-05-04
+
+> Profile before you optimize — intuition lies about bottlenecks.
+
+_Logged at 2026-05-04 11:39:53 UTC_
