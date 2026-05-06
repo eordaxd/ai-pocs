@@ -205,3 +205,9 @@ _Logged at 2026-05-04 11:39:53 UTC_
 > Design for observability: metrics, logs, and traces.
 
 _Logged at 2026-05-05 03:39:55 UTC_
+
+## 2026-05-06
+
+> Good error messages save hours of debugging.
+
+_Logged at 2026-05-06 03:28:43 UTC_
