@@ -211,3 +211,9 @@ _Logged at 2026-05-05 03:39:55 UTC_
 > Good error messages save hours of debugging.
 
 _Logged at 2026-05-06 03:28:43 UTC_
+
+## 2026-05-07
+
+> Measure before you optimize.
+
+_Logged at 2026-05-07 09:18:25 UTC_
