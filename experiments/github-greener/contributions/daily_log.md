@@ -217,3 +217,9 @@ _Logged at 2026-05-06 03:28:43 UTC_
 > Measure before you optimize.
 
 _Logged at 2026-05-07 09:18:25 UTC_
+
+## 2026-05-08
+
+> Delete dead code — version control remembers it for you.
+
+_Logged at 2026-05-08 08:17:36 UTC_
