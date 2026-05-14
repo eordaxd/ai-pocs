@@ -241,3 +241,9 @@ _Logged at 2026-05-11 09:10:33 UTC_
 > Code reviews are a learning opportunity, not a gatekeeping exercise.
 
 _Logged at 2026-05-12 02:27:19 UTC_
+
+## 2026-05-14
+
+> Delete dead code — version control remembers it for you.
+
+_Logged at 2026-05-14 10:52:35 UTC_
