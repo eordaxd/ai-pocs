@@ -247,3 +247,9 @@ _Logged at 2026-05-12 02:27:19 UTC_
 > Delete dead code — version control remembers it for you.
 
 _Logged at 2026-05-14 10:52:35 UTC_
+
+## 2026-05-15
+
+> Design for observability: metrics, logs, and traces.
+
+_Logged at 2026-05-15 03:07:37 UTC_
