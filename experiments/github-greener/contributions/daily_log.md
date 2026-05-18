@@ -253,3 +253,9 @@ _Logged at 2026-05-14 10:52:35 UTC_
 > Design for observability: metrics, logs, and traces.
 
 _Logged at 2026-05-15 03:07:37 UTC_
+
+## 2026-05-18
+
+> Design for observability: metrics, logs, and traces.
+
+_Logged at 2026-05-18 11:22:09 UTC_
