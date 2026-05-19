@@ -259,3 +259,9 @@ _Logged at 2026-05-15 03:07:37 UTC_
 > Design for observability: metrics, logs, and traces.
 
 _Logged at 2026-05-18 11:22:09 UTC_
+
+## 2026-05-19
+
+> Use feature flags to decouple deployment from release.
+
+_Logged at 2026-05-19 06:25:41 UTC_
