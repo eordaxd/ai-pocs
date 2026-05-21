@@ -271,3 +271,9 @@ _Logged at 2026-05-19 06:25:41 UTC_
 > Use feature flags to decouple deployment from release.
 
 _Logged at 2026-05-20 02:26:49 UTC_
+
+## 2026-05-21
+
+> Master your debugger — print statements only get you so far.
+
+_Logged at 2026-05-21 15:58:54 UTC_
