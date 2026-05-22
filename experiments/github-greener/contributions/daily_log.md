@@ -277,3 +277,9 @@ _Logged at 2026-05-20 02:26:49 UTC_
 > Master your debugger — print statements only get you so far.
 
 _Logged at 2026-05-21 15:58:54 UTC_
+
+## 2026-05-22
+
+> Ship small increments; big PRs are hard to review.
+
+_Logged at 2026-05-22 13:44:29 UTC_
