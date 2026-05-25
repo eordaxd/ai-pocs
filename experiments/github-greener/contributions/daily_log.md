@@ -283,3 +283,9 @@ _Logged at 2026-05-21 15:58:54 UTC_
 > Ship small increments; big PRs are hard to review.
 
 _Logged at 2026-05-22 13:44:29 UTC_
+
+## 2026-05-25
+
+> Document the 'why', not the 'what' — the code shows the what.
+
+_Logged at 2026-05-25 08:35:01 UTC_
