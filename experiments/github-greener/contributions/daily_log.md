@@ -289,3 +289,9 @@ _Logged at 2026-05-22 13:44:29 UTC_
 > Document the 'why', not the 'what' — the code shows the what.
 
 _Logged at 2026-05-25 08:35:01 UTC_
+
+## 2026-05-27
+
+> Read other people's code to expand your toolkit.
+
+_Logged at 2026-05-27 12:00:14 UTC_
