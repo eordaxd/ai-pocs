@@ -295,3 +295,9 @@ _Logged at 2026-05-25 08:35:01 UTC_
 > Read other people's code to expand your toolkit.
 
 _Logged at 2026-05-27 12:00:14 UTC_
+
+## 2026-05-28
+
+> Prefer composition over inheritance.
+
+_Logged at 2026-05-28 13:05:49 UTC_
