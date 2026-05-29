@@ -301,3 +301,9 @@ _Logged at 2026-05-27 12:00:14 UTC_
 > Prefer composition over inheritance.
 
 _Logged at 2026-05-28 13:05:49 UTC_
+
+## 2026-05-29
+
+> Master your debugger — print statements only get you so far.
+
+_Logged at 2026-05-29 08:17:34 UTC_
