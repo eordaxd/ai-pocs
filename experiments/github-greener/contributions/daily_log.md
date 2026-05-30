@@ -307,3 +307,9 @@ _Logged at 2026-05-28 13:05:49 UTC_
 > Master your debugger — print statements only get you so far.
 
 _Logged at 2026-05-29 08:17:34 UTC_
+
+## 2026-05-30
+
+> The best code is the code you don't have to write.
+
+_Logged at 2026-05-30 07:08:33 UTC_
