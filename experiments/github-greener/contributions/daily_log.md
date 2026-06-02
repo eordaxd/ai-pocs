@@ -325,3 +325,9 @@ _Logged at 2026-05-31 11:06:30 UTC_
 > Continuous integration catches problems while context is fresh.
 
 _Logged at 2026-06-01 17:11:16 UTC_
+
+## 2026-06-02
+
+> Document the 'why', not the 'what' — the code shows the what.
+
+_Logged at 2026-06-02 01:11:18 UTC_
