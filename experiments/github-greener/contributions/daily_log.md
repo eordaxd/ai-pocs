@@ -349,3 +349,9 @@ _Logged at 2026-06-09 11:00:50 UTC_
 > Embrace the UNIX philosophy: do one thing well.
 
 _Logged at 2026-06-10 02:21:24 UTC_
+
+## 2026-06-11
+
+> Write tests before fixing bugs to prevent regressions.
+
+_Logged at 2026-06-11 08:42:04 UTC_
