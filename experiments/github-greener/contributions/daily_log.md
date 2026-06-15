@@ -367,3 +367,9 @@ _Logged at 2026-06-12 09:21:09 UTC_
 > Profile before you optimize — intuition lies about bottlenecks.
 
 _Logged at 2026-06-14 10:55:36 UTC_
+
+## 2026-06-15
+
+> Build for accessibility from the start, not as a retrofit.
+
+_Logged at 2026-06-15 10:44:56 UTC_
