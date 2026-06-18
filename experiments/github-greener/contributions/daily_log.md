@@ -385,3 +385,9 @@ _Logged at 2026-06-16 10:12:06 UTC_
 > The best code is the code you don't have to write.
 
 _Logged at 2026-06-17 08:33:47 UTC_
+
+## 2026-06-18
+
+> Write tests before fixing bugs to prevent regressions.
+
+_Logged at 2026-06-18 11:55:27 UTC_
