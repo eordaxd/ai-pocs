@@ -391,3 +391,9 @@ _Logged at 2026-06-17 08:33:47 UTC_
 > Write tests before fixing bugs to prevent regressions.
 
 _Logged at 2026-06-18 11:55:27 UTC_
+
+## 2026-06-20
+
+> Design for observability: metrics, logs, and traces.
+
+_Logged at 2026-06-20 08:55:27 UTC_
