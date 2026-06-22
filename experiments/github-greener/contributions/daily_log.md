@@ -397,3 +397,9 @@ _Logged at 2026-06-18 11:55:27 UTC_
 > Design for observability: metrics, logs, and traces.
 
 _Logged at 2026-06-20 08:55:27 UTC_
+
+## 2026-06-22
+
+> Immutable data structures prevent entire classes of bugs.
+
+_Logged at 2026-06-22 08:39:13 UTC_
