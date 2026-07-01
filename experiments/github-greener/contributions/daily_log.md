@@ -421,3 +421,9 @@ _Logged at 2026-06-24 08:00:56 UTC_
 > Progress over perfection — ship and iterate.
 
 _Logged at 2026-06-27 09:25:12 UTC_
+
+## 2026-07-01
+
+> Document the 'why', not the 'what' — the code shows the what.
+
+_Logged at 2026-07-01 09:46:24 UTC_
