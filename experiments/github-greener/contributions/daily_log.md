@@ -427,3 +427,9 @@ _Logged at 2026-06-27 09:25:12 UTC_
 > Document the 'why', not the 'what' — the code shows the what.
 
 _Logged at 2026-07-01 09:46:24 UTC_
+
+## 2026-07-04
+
+> Use meaningful variable names — future you will thank you.
+
+_Logged at 2026-07-04 16:25:16 UTC_
