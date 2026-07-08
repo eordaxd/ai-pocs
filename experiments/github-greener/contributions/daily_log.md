@@ -445,3 +445,9 @@ _Logged at 2026-07-06 09:08:27 UTC_
 > Read other people's code to expand your toolkit.
 
 _Logged at 2026-07-07 11:30:28 UTC_
+
+## 2026-07-08
+
+> Master your debugger — print statements only get you so far.
+
+_Logged at 2026-07-08 08:45:46 UTC_
