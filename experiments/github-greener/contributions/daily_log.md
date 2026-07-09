@@ -451,3 +451,9 @@ _Logged at 2026-07-07 11:30:28 UTC_
 > Master your debugger — print statements only get you so far.
 
 _Logged at 2026-07-08 08:45:46 UTC_
+
+## 2026-07-09
+
+> Use meaningful variable names — future you will thank you.
+
+_Logged at 2026-07-09 10:44:11 UTC_
