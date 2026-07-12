@@ -463,3 +463,9 @@ _Logged at 2026-07-09 10:44:11 UTC_
 > Immutable data structures prevent entire classes of bugs.
 
 _Logged at 2026-07-10 02:44:13 UTC_
+
+## 2026-07-12
+
+> A failing test is more valuable than no test at all.
+
+_Logged at 2026-07-12 16:29:06 UTC_
