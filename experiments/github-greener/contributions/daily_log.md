@@ -469,3 +469,9 @@ _Logged at 2026-07-10 02:44:13 UTC_
 > A failing test is more valuable than no test at all.
 
 _Logged at 2026-07-12 16:29:06 UTC_
+
+## 2026-07-13
+
+> Code reviews are a learning opportunity, not a gatekeeping exercise.
+
+_Logged at 2026-07-13 10:38:28 UTC_
