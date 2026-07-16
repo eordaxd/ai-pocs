@@ -487,3 +487,9 @@ _Logged at 2026-07-14 02:38:30 UTC_
 > Keep dependencies up to date to avoid security surprises.
 
 _Logged at 2026-07-15 02:38:32 UTC_
+
+## 2026-07-16
+
+> Design for observability: metrics, logs, and traces.
+
+_Logged at 2026-07-16 06:36:25 UTC_
