@@ -493,3 +493,9 @@ _Logged at 2026-07-15 02:38:32 UTC_
 > Design for observability: metrics, logs, and traces.
 
 _Logged at 2026-07-16 06:36:25 UTC_
+
+## 2026-07-17
+
+> Prefer composition over inheritance.
+
+_Logged at 2026-07-17 00:02:57 UTC_
