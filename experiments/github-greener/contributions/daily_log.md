@@ -511,3 +511,9 @@ _Logged at 2026-07-18 02:55:54 UTC_
 > Take breaks; debugging with fresh eyes is a superpower.
 
 _Logged at 2026-07-20 09:13:28 UTC_
+
+## 2026-07-21
+
+> A failing test is more valuable than no test at all.
+
+_Logged at 2026-07-21 09:50:49 UTC_
