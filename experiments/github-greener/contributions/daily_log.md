@@ -517,3 +517,9 @@ _Logged at 2026-07-20 09:13:28 UTC_
 > A failing test is more valuable than no test at all.
 
 _Logged at 2026-07-21 09:50:49 UTC_
+
+## 2026-07-22
+
+> Measure before you optimize.
+
+_Logged at 2026-07-22 05:30:47 UTC_
