@@ -535,3 +535,9 @@ _Logged at 2026-07-23 01:09:49 UTC_
 > Code reviews are a learning opportunity, not a gatekeeping exercise.
 
 _Logged at 2026-07-24 07:08:43 UTC_
+
+## 2026-07-25
+
+> Continuous integration catches problems while context is fresh.
+
+_Logged at 2026-07-25 08:13:32 UTC_
