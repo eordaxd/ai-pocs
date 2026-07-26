@@ -541,3 +541,9 @@ _Logged at 2026-07-24 07:08:43 UTC_
 > Continuous integration catches problems while context is fresh.
 
 _Logged at 2026-07-25 08:13:32 UTC_
+
+## 2026-07-26
+
+> Prefer composition over inheritance.
+
+_Logged at 2026-07-26 19:56:03 UTC_
