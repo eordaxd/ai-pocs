@@ -547,3 +547,9 @@ _Logged at 2026-07-25 08:13:32 UTC_
 > Prefer composition over inheritance.
 
 _Logged at 2026-07-26 19:56:03 UTC_
+
+## 2026-07-27
+
+> Delete dead code — version control remembers it for you.
+
+_Logged at 2026-07-27 14:33:02 UTC_
