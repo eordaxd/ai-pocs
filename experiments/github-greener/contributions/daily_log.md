@@ -553,3 +553,9 @@ _Logged at 2026-07-26 19:56:03 UTC_
 > Delete dead code — version control remembers it for you.
 
 _Logged at 2026-07-27 14:33:02 UTC_
+
+## 2026-07-28
+
+> Good error messages save hours of debugging.
+
+_Logged at 2026-07-28 15:01:51 UTC_
