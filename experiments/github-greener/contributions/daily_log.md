@@ -559,3 +559,9 @@ _Logged at 2026-07-27 14:33:02 UTC_
 > Good error messages save hours of debugging.
 
 _Logged at 2026-07-28 15:01:51 UTC_
+
+## 2026-07-29
+
+> Ship small increments; big PRs are hard to review.
+
+_Logged at 2026-07-29 11:09:04 UTC_
