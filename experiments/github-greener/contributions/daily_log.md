@@ -565,3 +565,9 @@ _Logged at 2026-07-28 15:01:51 UTC_
 > Ship small increments; big PRs are hard to review.
 
 _Logged at 2026-07-29 11:09:04 UTC_
+
+## 2026-07-30
+
+> Profile before you optimize — intuition lies about bottlenecks.
+
+_Logged at 2026-07-30 10:01:46 UTC_
