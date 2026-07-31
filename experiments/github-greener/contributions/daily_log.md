@@ -571,3 +571,9 @@ _Logged at 2026-07-29 11:09:04 UTC_
 > Profile before you optimize — intuition lies about bottlenecks.
 
 _Logged at 2026-07-30 10:01:46 UTC_
+
+## 2026-07-31
+
+> Read other people's code to expand your toolkit.
+
+_Logged at 2026-07-31 01:06:49 UTC_
