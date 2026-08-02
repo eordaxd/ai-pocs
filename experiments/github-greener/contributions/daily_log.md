@@ -577,3 +577,9 @@ _Logged at 2026-07-30 10:01:46 UTC_
 > Read other people's code to expand your toolkit.
 
 _Logged at 2026-07-31 01:06:49 UTC_
+
+## 2026-08-02
+
+> A failing test is more valuable than no test at all.
+
+_Logged at 2026-08-02 01:14:34 UTC_
