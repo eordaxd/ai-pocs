@@ -583,3 +583,9 @@ _Logged at 2026-07-31 01:06:49 UTC_
 > A failing test is more valuable than no test at all.
 
 _Logged at 2026-08-02 01:14:34 UTC_
+
+## 2026-08-03
+
+> Master your debugger — print statements only get you so far.
+
+_Logged at 2026-08-03 13:21:44 UTC_
