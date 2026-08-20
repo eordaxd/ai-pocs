@@ -631,3 +631,9 @@ _Logged at 2026-08-18 10:45:41 UTC_
 > Pair programming accelerates knowledge sharing.
 
 _Logged at 2026-08-19 06:15:19 UTC_
+
+## 2026-08-20
+
+> Master your debugger — print statements only get you so far.
+
+_Logged at 2026-08-20 06:47:28 UTC_
