@@ -637,3 +637,9 @@ _Logged at 2026-08-19 06:15:19 UTC_
 > Master your debugger — print statements only get you so far.
 
 _Logged at 2026-08-20 06:47:28 UTC_
+
+## 2026-08-21
+
+> Good error messages save hours of debugging.
+
+_Logged at 2026-08-21 10:12:01 UTC_
