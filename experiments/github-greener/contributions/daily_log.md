@@ -649,3 +649,9 @@ _Logged at 2026-08-21 10:12:01 UTC_
 > Security is a feature, not a phase.
 
 _Logged at 2026-08-28 08:54:21 UTC_
+
+## 2026-09-01
+
+> Profile before you optimize — intuition lies about bottlenecks.
+
+_Logged at 2026-09-01 10:25:52 UTC_
