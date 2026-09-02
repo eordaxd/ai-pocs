@@ -655,3 +655,9 @@ _Logged at 2026-08-28 08:54:21 UTC_
 > Profile before you optimize — intuition lies about bottlenecks.
 
 _Logged at 2026-09-01 10:25:52 UTC_
+
+## 2026-09-02
+
+> Measure before you optimize.
+
+_Logged at 2026-09-02 07:13:45 UTC_
