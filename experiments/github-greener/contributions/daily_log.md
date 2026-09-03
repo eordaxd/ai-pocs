@@ -661,3 +661,9 @@ _Logged at 2026-09-01 10:25:52 UTC_
 > Measure before you optimize.
 
 _Logged at 2026-09-02 07:13:45 UTC_
+
+## 2026-09-03
+
+> Prefer composition over inheritance.
+
+_Logged at 2026-09-03 11:02:35 UTC_
