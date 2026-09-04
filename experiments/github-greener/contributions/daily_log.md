@@ -667,3 +667,9 @@ _Logged at 2026-09-02 07:13:45 UTC_
 > Prefer composition over inheritance.
 
 _Logged at 2026-09-03 11:02:35 UTC_
+
+## 2026-09-04
+
+> Build for accessibility from the start, not as a retrofit.
+
+_Logged at 2026-09-04 08:14:55 UTC_
