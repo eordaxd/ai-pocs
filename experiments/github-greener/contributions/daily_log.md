@@ -673,3 +673,9 @@ _Logged at 2026-09-03 11:02:35 UTC_
 > Build for accessibility from the start, not as a retrofit.
 
 _Logged at 2026-09-04 08:14:55 UTC_
+
+## 2026-09-05
+
+> Treat logs as a first-class feature, not an afterthought.
+
+_Logged at 2026-09-05 00:19:32 UTC_
