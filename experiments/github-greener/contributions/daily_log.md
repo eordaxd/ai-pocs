@@ -679,3 +679,9 @@ _Logged at 2026-09-04 08:14:55 UTC_
 > Treat logs as a first-class feature, not an afterthought.
 
 _Logged at 2026-09-05 00:19:32 UTC_
+
+## 2026-09-07
+
+> Delete dead code — version control remembers it for you.
+
+_Logged at 2026-09-07 07:28:07 UTC_
