@@ -685,3 +685,9 @@ _Logged at 2026-09-05 00:19:32 UTC_
 > Delete dead code — version control remembers it for you.
 
 _Logged at 2026-09-07 07:28:07 UTC_
+
+## 2026-09-08
+
+> Learn one new keyboard shortcut every week.
+
+_Logged at 2026-09-08 03:33:42 UTC_
