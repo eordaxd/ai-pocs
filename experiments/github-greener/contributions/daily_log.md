@@ -691,3 +691,9 @@ _Logged at 2026-09-07 07:28:07 UTC_
 > Learn one new keyboard shortcut every week.
 
 _Logged at 2026-09-08 03:33:42 UTC_
+
+## 2026-09-09
+
+> Measure before you optimize.
+
+_Logged at 2026-09-09 06:47:56 UTC_
