@@ -697,3 +697,9 @@ _Logged at 2026-09-08 03:33:42 UTC_
 > Measure before you optimize.
 
 _Logged at 2026-09-09 06:47:56 UTC_
+
+## 2026-09-10
+
+> Version your APIs from day one.
+
+_Logged at 2026-09-10 08:15:32 UTC_
