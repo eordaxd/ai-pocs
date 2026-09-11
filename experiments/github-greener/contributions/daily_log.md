@@ -703,3 +703,9 @@ _Logged at 2026-09-09 06:47:56 UTC_
 > Version your APIs from day one.
 
 _Logged at 2026-09-10 08:15:32 UTC_
+
+## 2026-09-11
+
+> Write tests before fixing bugs to prevent regressions.
+
+_Logged at 2026-09-11 00:17:04 UTC_
