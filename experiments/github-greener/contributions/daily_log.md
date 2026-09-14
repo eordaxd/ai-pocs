@@ -721,3 +721,9 @@ _Logged at 2026-09-12 01:36:28 UTC_
 > Keep functions small and focused on a single task.
 
 _Logged at 2026-09-13 14:51:32 UTC_
+
+## 2026-09-14
+
+> Ship small increments; big PRs are hard to review.
+
+_Logged at 2026-09-14 03:48:11 UTC_
