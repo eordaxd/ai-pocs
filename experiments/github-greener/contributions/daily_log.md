@@ -733,3 +733,9 @@ _Logged at 2026-09-14 03:48:11 UTC_
 > Keep dependencies up to date to avoid security surprises.
 
 _Logged at 2026-09-15 03:48:52 UTC_
+
+## 2026-09-16
+
+> Use feature flags to decouple deployment from release.
+
+_Logged at 2026-09-16 07:08:30 UTC_
