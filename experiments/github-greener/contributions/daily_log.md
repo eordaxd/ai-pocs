@@ -739,3 +739,9 @@ _Logged at 2026-09-15 03:48:52 UTC_
 > Use feature flags to decouple deployment from release.
 
 _Logged at 2026-09-16 07:08:30 UTC_
+
+## 2026-09-17
+
+> Learn one new keyboard shortcut every week.
+
+_Logged at 2026-09-17 03:08:33 UTC_
