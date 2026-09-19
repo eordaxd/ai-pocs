@@ -751,3 +751,9 @@ _Logged at 2026-09-17 03:08:33 UTC_
 > Security is a feature, not a phase.
 
 _Logged at 2026-09-18 05:18:13 UTC_
+
+## 2026-09-19
+
+> Use feature flags to decouple deployment from release.
+
+_Logged at 2026-09-19 01:20:33 UTC_
