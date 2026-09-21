@@ -757,3 +757,9 @@ _Logged at 2026-09-18 05:18:13 UTC_
 > Use feature flags to decouple deployment from release.
 
 _Logged at 2026-09-19 01:20:33 UTC_
+
+## 2026-09-21
+
+> Treat logs as a first-class feature, not an afterthought.
+
+_Logged at 2026-09-21 09:34:16 UTC_
