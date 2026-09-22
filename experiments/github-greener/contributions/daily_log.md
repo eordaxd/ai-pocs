@@ -763,3 +763,9 @@ _Logged at 2026-09-19 01:20:33 UTC_
 > Treat logs as a first-class feature, not an afterthought.
 
 _Logged at 2026-09-21 09:34:16 UTC_
+
+## 2026-09-22
+
+> Security is a feature, not a phase.
+
+_Logged at 2026-09-22 12:28:34 UTC_
