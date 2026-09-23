@@ -769,3 +769,9 @@ _Logged at 2026-09-21 09:34:16 UTC_
 > Security is a feature, not a phase.
 
 _Logged at 2026-09-22 12:28:34 UTC_
+
+## 2026-09-23
+
+> Good error messages save hours of debugging.
+
+_Logged at 2026-09-23 17:28:13 UTC_
