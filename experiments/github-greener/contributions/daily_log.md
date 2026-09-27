@@ -787,3 +787,9 @@ _Logged at 2026-09-24 14:14:52 UTC_
 > Progress over perfection — ship and iterate.
 
 _Logged at 2026-09-26 11:36:05 UTC_
+
+## 2026-09-27
+
+> Code reviews are a learning opportunity, not a gatekeeping exercise.
+
+_Logged at 2026-09-27 03:36:07 UTC_
