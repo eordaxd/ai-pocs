@@ -793,3 +793,9 @@ _Logged at 2026-09-26 11:36:05 UTC_
 > Code reviews are a learning opportunity, not a gatekeeping exercise.
 
 _Logged at 2026-09-27 03:36:07 UTC_
+
+## 2026-09-28
+
+> Learn one new keyboard shortcut every week.
+
+_Logged at 2026-09-28 07:44:37 UTC_
