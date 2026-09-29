@@ -799,3 +799,9 @@ _Logged at 2026-09-27 03:36:07 UTC_
 > Learn one new keyboard shortcut every week.
 
 _Logged at 2026-09-28 07:44:37 UTC_
+
+## 2026-09-29
+
+> Write tests before fixing bugs to prevent regressions.
+
+_Logged at 2026-09-29 08:27:13 UTC_
