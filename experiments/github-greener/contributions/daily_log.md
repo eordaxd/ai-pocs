@@ -805,3 +805,9 @@ _Logged at 2026-09-28 07:44:37 UTC_
 > Write tests before fixing bugs to prevent regressions.
 
 _Logged at 2026-09-29 08:27:13 UTC_
+
+## 2026-09-30
+
+> Immutable data structures prevent entire classes of bugs.
+
+_Logged at 2026-09-30 08:16:35 UTC_
