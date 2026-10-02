@@ -817,3 +817,9 @@ _Logged at 2026-09-30 08:16:35 UTC_
 > Take breaks; debugging with fresh eyes is a superpower.
 
 _Logged at 2026-10-01 22:05:03 UTC_
+
+## 2026-10-02
+
+> Use feature flags to decouple deployment from release.
+
+_Logged at 2026-10-02 02:05:05 UTC_
