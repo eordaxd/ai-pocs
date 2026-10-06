@@ -841,3 +841,9 @@ _Logged at 2026-10-04 20:02:21 UTC_
 > Profile before you optimize — intuition lies about bottlenecks.
 
 _Logged at 2026-10-05 00:02:22 UTC_
+
+## 2026-10-06
+
+> Design for observability: metrics, logs, and traces.
+
+_Logged at 2026-10-06 00:02:25 UTC_
