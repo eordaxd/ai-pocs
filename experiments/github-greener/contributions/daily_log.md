@@ -847,3 +847,9 @@ _Logged at 2026-10-05 00:02:22 UTC_
 > Design for observability: metrics, logs, and traces.
 
 _Logged at 2026-10-06 00:02:25 UTC_
+
+## 2026-10-13
+
+> Continuous integration catches problems while context is fresh.
+
+_Logged at 2026-10-13 18:07:25 UTC_
