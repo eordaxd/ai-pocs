@@ -853,3 +853,9 @@ _Logged at 2026-10-06 00:02:25 UTC_
 > Continuous integration catches problems while context is fresh.
 
 _Logged at 2026-10-13 18:07:25 UTC_
+
+## 2026-10-17
+
+> Good error messages save hours of debugging.
+
+_Logged at 2026-10-17 17:49:10 UTC_
