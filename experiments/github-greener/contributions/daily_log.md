@@ -871,3 +871,9 @@ _Logged at 2026-10-22 07:07:18 UTC_
 > Progress over perfection — ship and iterate.
 
 _Logged at 2026-10-27 17:06:37 UTC_
+
+## 2026-10-29
+
+> A failing test is more valuable than no test at all.
+
+_Logged at 2026-10-29 06:56:03 UTC_
