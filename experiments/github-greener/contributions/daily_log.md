@@ -877,3 +877,9 @@ _Logged at 2026-10-27 17:06:37 UTC_
 > A failing test is more valuable than no test at all.
 
 _Logged at 2026-10-29 06:56:03 UTC_
+
+## 2026-11-01
+
+> Use meaningful variable names — future you will thank you.
+
+_Logged at 2026-11-01 12:20:35 UTC_
