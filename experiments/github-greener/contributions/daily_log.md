@@ -883,3 +883,9 @@ _Logged at 2026-10-29 06:56:03 UTC_
 > Use meaningful variable names — future you will thank you.
 
 _Logged at 2026-11-01 12:20:35 UTC_
+
+## 2026-11-04
+
+> Refactor early and often; tech debt compounds.
+
+_Logged at 2026-11-04 09:08:28 UTC_
