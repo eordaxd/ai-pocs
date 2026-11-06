@@ -889,3 +889,9 @@ _Logged at 2026-11-01 12:20:35 UTC_
 > Refactor early and often; tech debt compounds.
 
 _Logged at 2026-11-04 09:08:28 UTC_
+
+## 2026-11-06
+
+> Security is a feature, not a phase.
+
+_Logged at 2026-11-06 06:22:31 UTC_
