@@ -895,3 +895,9 @@ _Logged at 2026-11-04 09:08:28 UTC_
 > Security is a feature, not a phase.
 
 _Logged at 2026-11-06 06:22:31 UTC_
+
+## 2026-11-09
+
+> Ship small increments; big PRs are hard to review.
+
+_Logged at 2026-11-09 10:56:48 UTC_
