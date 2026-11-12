@@ -907,3 +907,9 @@ _Logged at 2026-11-09 10:56:48 UTC_
 > Embrace the UNIX philosophy: do one thing well.
 
 _Logged at 2026-11-10 15:27:42 UTC_
+
+## 2026-11-12
+
+> Good error messages save hours of debugging.
+
+_Logged at 2026-11-12 20:05:10 UTC_
