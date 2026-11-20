@@ -919,3 +919,9 @@ _Logged at 2026-11-12 20:05:10 UTC_
 > Ship small increments; big PRs are hard to review.
 
 _Logged at 2026-11-15 10:59:13 UTC_
+
+## 2026-11-20
+
+> Write tests before fixing bugs to prevent regressions.
+
+_Logged at 2026-11-20 21:16:44 UTC_
